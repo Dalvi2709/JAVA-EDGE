@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="js/myscript.js"></script>
+</head>
+<body>
+    
+  
+    <div class="row">
+
+
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+           
+        </div>
+        <div class="col-sm-4"></div>
+        
+    </div>
+    <Script>
+         var a = 200;
+        function r(){
+            var a = 400;
+        }
+        {
+            var b = -400;
+        }
+        var b = a;  //ex of using function 
+        document.write(b);  // 200
+        
+        
+        var a = 200;
+        {
+            var a = 400;
+        }
+        {
+            var b = -400; // here is only scope is used working is different
+        }
+        var b = a;
+        document.write(b); // 400
+
+
+        var a = 200;
+        {
+            let a = 400;
+        }
+        {
+            var b = -400; // here is only scope is used working is different
+        }
+        var b = a;
+        document.write(b); // 200
+        
+        var a = 200;
+        function r(){
+            let a = 400;
+        }
+        {
+            var b = -400; // here is function used working is different
+        }
+        var b = a;
+        document.write(b); // 200
+
+
+    </Script>
+</body>
+</html>
