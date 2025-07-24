@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
+    </script>
+    <style>
+        body {
+            background: #f0f2f5;
+        }
+
+        .result-card {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <form class="border p-4 bg-dark text-white rounded" name="form">
+                    <h3 class="text-center mb-4">EMI Calculator</h3>
+                    <div class="mb-3">
+                        <label for="loan_amount" class="form-label">Principal Loan Amount (₹)</label>
+                        <input type="number" class="form-control" name="loan_amount" id="loan_amount"
+                            placeholder="e.g. 500000">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loan_tenure_months" class="form-label">Loan Tenure (in months)</label>
+                        <input type="number" class="form-control" name="loan_tenure_months" id="loan_tenure_months"
+                            placeholder="e.g. 60">
+                    </div>
+                    <p class="mb-3">Annual Interest Rate: <strong>8%</strong></p>
+                    <button type="button" onclick="emi()" class="btn btn-warning w-100">Calculate EMI</button>
+                </form>
+
+                <div class="card mt-4 result-card shadow" id="resultCard">
+                    <div class="card-body bg-success text-white">
+                        <h4 class="card-title text-center">Loan Summary</h4>
+                        <hr class="bg-white">
+                        <p><strong>Monthly EMI:</strong> ₹<span id="emiValue"></span></p>
+                        <p><strong>Total Payment:</strong> ₹<span id="totalPayment"></span></p>
+                        <p><strong>Total Interest:</strong> ₹<span id="totalInterest"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function emi() {
+            var loanAmount = Number(document.form.loan_amount.value);
+            var tenureMonths = Number(document.form.loan_tenure_months.value);
+
+            if (!loanAmount || loanAmount <= 0 || !tenureMonths || tenureMonths <= 0) {
+                alert("Please enter valid loan amount and tenure.");
+                return;
+            }
+
+            var ratePerMonth = 8 / 12 / 100;
+
+            var numerator = loanAmount * ratePerMonth * Math.pow(1 + ratePerMonth, tenureMonths);
+            var denominator = Math.pow(1 + ratePerMonth, tenureMonths) - 1;
+            var emi = numerator / denominator;
+
+            var totalPayment = emi * tenureMonths;
+            var totalInterest = totalPayment - loanAmount;
+
+            document.getElementById("emiValue").innerText = emi.toFixed(2);
+            document.getElementById("totalPayment").innerText = totalPayment.toFixed(2);
+            document.getElementById("totalInterest").innerText = totalInterest.toFixed(2);
+
+            document.getElementById("resultCard").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
