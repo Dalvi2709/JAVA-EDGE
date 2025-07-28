@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- with designing using button onclick.  -->
+    <!-- <button type="button" onclick="test()">Enter</button> -->
+    <!-- <input type="text" onkeyup="test()"> -->
+    <!-- <input type="text" onkeypress="test()"> -->
+    <!-- <input type="text" onkeydown="test()"> -->
+    <input type="text" id="userinput" placeholder="Enter the number" class="userinput">
+    <button type="button" onclick="evenodd()">Check</button>
+
+    <script>
+        function evenodd() {
+            const n = Number(document.getElementById("userinput").value);
+
+            if (isNaN(n)) {
+                alert("Please enter a valid number");
+                return;
+            }
+
+            if (n % 2 === 0) {
+                alert("Number is even");
+            } else {
+                alert("Number is odd");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
