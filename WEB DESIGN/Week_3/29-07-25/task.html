@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="password" id="pass" placeholder="enter pass"><br><br>
+        <input type="password" id="cpass" onkeyup="check()" placeholder="enter cpass"><br><br>
+        <hr>
+        <span id="msg" style="color: red"></span>
+        
+    </form>
+    
+    <script>
+        function check(){
+            var p1 = document.getElementById("pass").value;
+            var p2 = document.getElementById("cpass").value;
+            if(p1 == p2){
+                document.getElementById("msg").innerText = "match";
+                document.getElementById("msg").style.color = "green";
+            }else{
+                document.getElementById("msg").innerText = "password not match";
+
+            }
+        }
+    </script>
+
+</body>
+</html>
