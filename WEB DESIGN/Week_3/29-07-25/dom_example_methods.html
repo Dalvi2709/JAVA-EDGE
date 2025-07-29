@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- without form tag also we can get the id -->
+    <form action="">
+        <input type="text" placeholder="Enter first name" id="firstname"><br><br>
+        <input type="text" placeholder="Enter last name" id="lastname"><br><br>
+
+        <button type="button" onclick="check()">Submit</button>
+        <hr>
+    </form>
+
+    <script>
+        function check(){
+            var fn = document.getElementById("firstname").value;
+            var ln = document.getElementById("lastname").value;
+
+            alert(fn + " " + ln);
+        }
+    </script>
+</body>
+</html>
