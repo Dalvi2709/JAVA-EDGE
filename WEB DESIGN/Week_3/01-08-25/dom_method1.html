@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 name = "abc">Hii</h1>
+    <h1 name = "abc">Hii hello</h1>
+    <h1 name = "xyz">Hii have a nice day</h1>
+    <p name = "abc">Lorem ipsum dolor sit.</p>
+
+    <button type="button" onclick="test()">click Here</button>
+
+    <script>
+        // store the collection of object and return its length.
+         function test(){
+            var x = document.getElementsByName("abc");
+            alert(x.length);
+
+            var v = document.getElementsByTagName("p");
+            alert(v.length);
+         }
+
+    </script>
+</body>
+</html>
