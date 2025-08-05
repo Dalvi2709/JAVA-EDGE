@@ -15,9 +15,11 @@ what is function and its types new syntax advantages
 parameter and args
 actual and formal value in function agrs or parameter
 function expression and arrow function
-BOM - Browser Object Model
-DOM - Document Object Model
+BOM - Browser Object Model imp 
+DOM - Document Object Model imp
 what is window 
 how to redirect page in javascript
 what is Document Object
 what is variable and its types
+explain the methods of DOM getelementbyid , getelementbyname , getelementbytagname , queeryselector , queeryselectorAll
+difference between innerHTML and innerText.

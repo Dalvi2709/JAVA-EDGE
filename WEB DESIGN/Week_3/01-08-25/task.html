@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h1>Type Here</h1>
+        <input type="text" id="input" onkeyup="test()">
+        <br>
+        character count : <span id="output1"></span>
+        <br>
+        words count : <span id = "output2"></span>
+        <br><hr>
+    </form>
+
+    <script>
+        function test () 
+        {   
+            // count the character enter in the input box and words in input box.
+            var x = document.getElementById("input").value;
+            document.getElementById("output1").innerText = x.length;      
+            
+            var v  = document.getElementById("input").value;
+            var count = 0;
+            var char_c = 0;
+            for(let i=0; i<v.length; i++){
+                if(v[i] != ' '){
+                
+                }
+                
+                else{
+                    count++;
+                 
+                }
+            }
+            document.getElementById("output2").innerText = count;
+            
+        }
+    </script>
+    
+</body>
+</html>
