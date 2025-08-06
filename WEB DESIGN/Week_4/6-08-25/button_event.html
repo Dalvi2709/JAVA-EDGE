@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <!-- events  -->
+    <!-- 
+         button - click
+         input - input , keyup , keydown , keypress 
+         select - change
+    -->
+
+    <button type="button" id="btn">Click Here</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function()
+            {
+                alert("Click Event");
+            });
+        });
+    </script>
+
+</body>
+</html>
