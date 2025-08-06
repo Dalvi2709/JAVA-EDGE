@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .circle{
+            background-color: black;
+            border-radius: 100px;
+            height: 150px;
+            width: 150px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle" id="redc"></div>
+    <div class="circle" id="yellowc"></div>
+    <div class="circle" id="greenc"></div>
+
+    <button  id="red">RED</button>
+    <button  id="yellow">YELLOW</button>
+    <button  id="green">GREEN</button>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#red").click(function(){
+                $("#redc").click().css("background-color","red");
+                $("#yellowc").click().css("background-color","black");
+                $("#greenc").click().css("background-color","black");
+            });
+            $("#yellow").click(function(){
+                $("#redc").click().css("background-color","black");
+                $("#yellowc").click().css("background-color","yellow");
+                $("#greenc").click().css("background-color","black");
+            });
+            $("#green").click(function(){
+                $("#redc").click().css("background-color","black");
+                $("#yellowc").click().css("background-color","black");
+                $("#greenc").click().css("background-color","green");
+            });
+        });
+    </script>
+</body>
+
+</html>
